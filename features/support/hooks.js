@@ -1,6 +1,6 @@
 'use strict';
 
-require('geckodriver');
+require('chromedriver');
 require('cucumber').Util.Colors(true);
 
 const chai = require('chai'), chaiAsPromised = require('chai-as-promised');
@@ -13,7 +13,7 @@ global.by = webdriver.By;
 module.exports = function ()  {
     this.setDefaultTimeout(60000);
     this.registerHandler('BeforeFeatures', () => {
-        global.driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.firefox()).build();
+        global.driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
         return global.driver.manage().window().maximize();
     });    
     this.Before({tags: ['@phone']}, () => global.driver.manage().window().setSize(800, 640));

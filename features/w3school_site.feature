@@ -6,11 +6,11 @@ So that I can see the application on multiple resolutions
 @desktop
   Scenario Outline: Desktop_1 - Searching on w3school
     Given the w3school site is loaded
-    #When the Search button is clicked
-    #Then the Search bar should be visible
+    When the Search button is clicked
+    Then the Search bar should be visible
 
-    #When the <search_term> term is typed into the Search bar
-    #And the Search button is clicked
+    When the "<search_term>" term is typed into the Search bar
+    And the Search button is clicked on the page
     #Then the SRL popup should be displayed
     #And the SRL should contain at least one item
 
