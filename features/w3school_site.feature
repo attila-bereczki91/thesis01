@@ -16,13 +16,13 @@ So that I can see the application on multiple resolutions
 
     When the X button of the SRL popup is clicked
     Then the SRL popup should be hidden
-    #And the <placeholder_text> should be displayed in the Search bar (SANYIKA)
+    #And the <placeholder_text> should be displayed in the Search bar
     And the w3school logo should be visible
     #And the bar block should contain at least one item
 
     When the "<title>" item is clicked on the bar block
     #Then the proper page should load
-    #And the "<tutorial>" should match the opened page (SANYIKA)
+    And the "<tutorial>" should match the opened page
     And the Home button is displayed
     And the Home button is clicked
 
