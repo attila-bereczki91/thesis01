@@ -47,4 +47,3 @@ this.When(/^the "([^"]*)" item is clicked on the bar block$/, (title) =>{
 });
 
 };
-
