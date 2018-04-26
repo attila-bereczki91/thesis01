@@ -56,7 +56,7 @@ module.exports = function () {
         driver.findElement(by.css(W3SCHOOL_LOGO_SELECTOR)).isDisplayed();
     });
     //SANYIKA
-    this.Then(/^the "([^"]*") should match the opened page$/, tutorial_title => {
+    this.Then(/^the "(.*)" should match the opened page$/, tutorial_title => {
         return expect(driver.findElement(by.css(TITLE_SELECTOR)).getText()).to.eventually.equal(tutorial_title);
     });
     this.Then(/^the Home button is displayed$/, () => {
