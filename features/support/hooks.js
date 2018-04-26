@@ -16,6 +16,6 @@ module.exports = function ()  {
         global.driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
         return global.driver.manage().window().maximize();
     });    
-    this.Before({tags: ['@phone']}, () => global.driver.manage().window().setSize(800, 640));
+    this.Before({tags: ['@phone']}, () => global.driver.manage().window().setSize(640, 800));
     this.registerHandler('AfterFeatures', () =>  global.driver.quit());
 };
