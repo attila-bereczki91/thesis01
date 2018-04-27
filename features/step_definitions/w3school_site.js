@@ -36,7 +36,7 @@ module.exports = function () {
     });
     this.When(/^the X button of the SRL popup is clicked$/, () => {
         driver.findElement(by.xpath(X_BUTTON_OF_SRL_SELECTOR)).click();
-        return driver.sleep(2000);
+        return driver.sleep(1000);
         //  return driver.wait(() => driver.findElement(by.xpath("//div[@class='gsc-results-wrapper-overlay gsc-results-wrapper-visible']")).isDisplayed());
     });
 
@@ -44,8 +44,7 @@ module.exports = function () {
         driver.findElement(by.xpath('//a[contains(text(), "' + title + '")]')).click();
     });
     this.When(/^the "(.*)" item is clicked on hamburger menu$/, (title) => {
-        driver.findElement(by.xpath('//nav[@id="nav_tutorials"]/div[@class="w3-row-padding w3-bar-block"]/div[@class="w3-col l3 m6"]/a[contains(text(), "' + title + '")]')).click();
-        return driver.sleep(3000);
+        driver.findElement(by.xpath('//div[@class="w3-col l3 m6"]/a[contains(text(), "' + title + '")]')).click();
     });
     this.When(/^the Next button is clicked$/, () => {
         driver.findElement(by.css(NEXT_BUTTON_SELECTOR)).click();
@@ -53,11 +52,9 @@ module.exports = function () {
     this.When(/^the Hamburger menu is clicked$/, () => {
         driver.findElement(by.css(HAMBURGER_MENU_BUTTON_SELECTOR)).click();
         return driver.wait(() => driver.findElement(by.css(HAMBURGER_MENU_SELECTOR)).isDisplayed());
-        return driver.sleep(3000);
     });
     this.When(/^the "Tutorial" button is clicked$/, () => {
         driver.findElement(by.xpath(TUTORIAL_BUTTON_SELECTOR)).click();
-        return driver.sleep(3000);
     });
     this.When(/^the Home button is (displayed|hidden)$/, (visibility) => {
         return expect (driver.findElement(by.css(HOME_BUTTON_SELECTOR)).isDisplayed()).to.eventually.equal(visibility === 'displayed');

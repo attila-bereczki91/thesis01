@@ -32,7 +32,7 @@ So that I can see the application on multiple resolutions
     | responsive web design  |  Learn JavaScript |  JavaScript Tutorial |Custom Search| js_intro |
     
    
-   @phone
+  @phone
   Scenario Outline: Phone_1 - Searching on w3school
     Given the w3school site is loaded
     When the Search button is clicked
@@ -53,6 +53,12 @@ So that I can see the application on multiple resolutions
     And the "<title>" item is clicked on hamburger menu
     Then the "<tutorial>" should match the opened page
 
+    When the Next button is clicked
+    Then the URL should contain the "<parameter>"
+    And the Home button is displayed
+
+    And the Home button is clicked
+
     Examples:
-    | search_term | placeholder_text | tutorial | title |
-    | responsive web design|  Custom Search | JavaScript Tutorial |Learn JavaScript |
+    | search_term | placeholder_text | tutorial | title |  parameter |
+    | responsive web design|  Custom Search | JavaScript Tutorial |Learn JavaScript | js_intro |
