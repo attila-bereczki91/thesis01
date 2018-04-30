@@ -11,7 +11,8 @@ module.exports = function () {
         X_BUTTON_OF_SRL_SELECTOR = "//div[@class='gsc-results-close-btn gsc-results-close-btn-visible']",
         W3SCHOOL_LOGO_SELECTOR = '.w3-half> a[class=w3schools-logo]',
         HOME_BUTTON_SELECTOR = 'a.topnav-icons.fa-home.w3-left',
-        TITLE_SELECTOR = '.w3-col > h1';
+        TITLE_SELECTOR = '.w3-col > h1',
+        PLACEHOLDER_OF_THE_SEARCHBAR_SELECTOR = '#gs_tti50 > input[placeholder]';
 
 
 
@@ -49,13 +50,13 @@ module.exports = function () {
         return expect(driver.findElement(by.css(SRL_POPUP_SELECTOR)).isDisplayed()).to.eventually.equal(visibility === 'displayed');
     });
     //SANYIKA
-    this.Then(/^the ([^"]*) should be displayed in the Search bar$/, placeholder_text => {
-        return expect(driver.findElement(by.css(SEARCH_BAR_SELECTOR).placeholder).getText()).to.eventually.equal(placeholder_text);
+    this.Then(/^the "(.*)" should be displayed in the Search bar$/, placeholder_text => {
+        return expect(driver.findElement(by.css(PLACEHOLDER_OF_THE_SEARCHBAR_SELECTOR).placeholder).getText()).to.eventually.equal(placeholder_text);
     });
     this.Then(/^the w3school logo should be visible$/, () => {
         driver.findElement(by.css(W3SCHOOL_LOGO_SELECTOR)).isDisplayed();
     });
-    //SANYIKA
+    
     this.Then(/^the "(.*)" should match the opened page$/, tutorial_title => {
         return expect(driver.findElement(by.css(TITLE_SELECTOR)).getText()).to.eventually.equal(tutorial_title);
     });

@@ -16,7 +16,7 @@ So that I can see the application on multiple resolutions
 
     When the X button of the SRL popup is clicked
     Then the SRL popup should be hidden
-    #And the <placeholder_text> should be displayed in the Search bar
+    And the "<placeholder_text>" should be displayed in the Search bar
     And the w3school logo should be visible
     #And the bar block should contain at least one item
 
